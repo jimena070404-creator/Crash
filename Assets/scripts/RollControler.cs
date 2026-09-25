@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class RollControler : MonoBehaviour
 {
@@ -7,15 +8,29 @@ public class RollControler : MonoBehaviour
    private InputController inputController;
    [SerializeField]
    private UnityEvent onRoll;
+   [SerializeField]
+   private float rollDuration = 1f;
+   [SerializeField]
+   private GameObject rollEffectPrefab;
+   [SerializeField]
+   private float effectOffsetY = 0.5f;
+   private bool isRolling = false;
    private void Update()
     {
-        if (inputController.Roll)
+        if (!isRolling && inputController.Roll)
         {
             Roll();
         }
     }
     private void Roll()
     {
-        onRoll?.Invoke();   
+        PoolManager.Instance.GetObject(rollEffectPrefab, transform.position + (Vector3.up * effectOffsetY));
+        isRolling = true;
+        onRoll?.Invoke();
+        Invoke (nameof(EndRoll), rollDuration);   
+    }
+    private void EndRoll() 
+    {
+        isRolling = false;
     }
 }
