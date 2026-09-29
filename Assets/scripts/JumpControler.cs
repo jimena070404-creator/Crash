@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class JumpControler : MonoBehaviour
 {
@@ -7,7 +8,10 @@ public class JumpControler : MonoBehaviour
    [SerializeField]
    private CharacterController characterController;
    [SerializeField]
+   private UnityEvent onJump;
+   [SerializeField]
    private float jumpVelocity = 8f;
+   [SerializeField]
    private float gravity = -15f;
    private float verticalVelocity;
    public float VerticalVelocity => verticalVelocity;
@@ -21,6 +25,7 @@ public class JumpControler : MonoBehaviour
             }
             if (inputController.Jump)
             {
+                onJump.Invoke();
                 verticalVelocity = jumpVelocity;
             }
         }
