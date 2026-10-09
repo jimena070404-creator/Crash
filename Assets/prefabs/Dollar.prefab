@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7465441573774843293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9128642259377117429}
+  - component: {fileID: 6701110372991052502}
+  - component: {fileID: 6009282513075250546}
+  - component: {fileID: 5695079224773241036}
+  m_Layer: 0
+  m_Name: Dollar
+  m_TagString: Coin
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9128642259377117429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7465441573774843293}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.87, y: 2.63, z: -3.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8724701047704784480}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6701110372991052502
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7465441573774843293}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.889356, y: 0.38641143, z: 0.18292534}
+  m_Center: {x: 0.003585875, y: 0.55818474, z: -0.0018764138}
+--- !u!114 &6009282513075250546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7465441573774843293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb39c31026be8e45885700d66bda314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rotate
+  rotationSpeed: {x: 0, y: 20, z: 0}
+--- !u!114 &5695079224773241036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7465441573774843293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58af40125b00efb41b074d24a4297674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Coin
+  coinValue: 10
+  coinEffectPrefab: {fileID: 6978899957321229151, guid: c9763f2b9af5b0447849312f02f748e7, type: 3}
+--- !u!1001 &9123980712084597131
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 9128642259377117429}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 88.2086
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3082254
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 39.160095
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.561
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+      propertyPath: m_Name
+      value: DollarBill
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+--- !u!4 &8724701047704784480 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9c49a2f20c558cb42a1e03e9a113f2a0, type: 3}
+  m_PrefabInstance: {fileID: 9123980712084597131}
+  m_PrefabAsset: {fileID: 0}

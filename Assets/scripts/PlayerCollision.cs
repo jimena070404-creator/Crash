@@ -23,7 +23,7 @@ public class PlayerCollision : MonoBehaviour
         }
          else if (other.CompareTag("Enemy"))
         {
-            if (TryGetComponent(out Enemy enemy))
+            if (other.TryGetComponent(out Enemy enemy))
             {
                 if (rollController.IsRolling)
                 {
