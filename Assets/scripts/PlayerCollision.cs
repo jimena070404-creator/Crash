@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem.iOS;
 public class PlayerCollision : MonoBehaviour
 {
     [SerializeField]
