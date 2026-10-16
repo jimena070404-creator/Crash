@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public class ThrowEnemies : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class ThrowEnemies : MonoBehaviour
     private float throwForce;
     [SerializeField]
     private float throwTime;
+    [SerializeField]
+    private UnityEvent onThrow;
+    [SerializeField]
+    private particlesConfig particlesConfig;
     public void ThrowEnemy(Transform enemy)
     {
         StartCoroutine(ThrowEnemyCoroutine(enemy));
@@ -18,6 +24,8 @@ public class ThrowEnemies : MonoBehaviour
     {
         Vector3 direction = player.forward;
         float elapsedTime = 0f;
+        onThrow?.Invoke();
+        PoolManager.Instance.GetObject(particlesConfig.particlesPrefab, enemy.position + new Vector3(0f, particlesConfig.offsetParticlesY, 0f));
         while (elapsedTime < throwTime)
         {
             enemy.position += direction * throwForce * Time.deltaTime;
