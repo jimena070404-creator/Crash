@@ -3,20 +3,20 @@ using UnityEngine.Events;
 
 public class JumpControler : MonoBehaviour
 {
-   [SerializeField]
-   private InputController inputController;
-   [SerializeField]
-   private CharacterController characterController;
-   [SerializeField]
-   private UnityEvent onJump;
-   [SerializeField]
-   private float jumpVelocity = 8f;
-   [SerializeField]
-   private float gravity = -15f;
-   private float verticalVelocity;
-   public float VerticalVelocity => verticalVelocity;
-   private void Update() 
-   {
+    [SerializeField]
+    private InputController inputController;
+    [SerializeField]
+    private CharacterController characterController;
+    [SerializeField]
+    private UnityEvent onJump;
+    [SerializeField]
+    private float jumpVelocity = 8f;
+    [SerializeField]
+    private float gravity = -15f;
+    private float verticalVelocity;
+    public float VerticalVelocity => verticalVelocity;
+    private void Update() 
+    {
         if (characterController.isGrounded)
         {
             if (verticalVelocity < 0f)
@@ -33,5 +33,5 @@ public class JumpControler : MonoBehaviour
         {
             verticalVelocity += gravity * Time.deltaTime;
         }
-   }
+    }
 }
