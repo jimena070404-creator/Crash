@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,18 @@ public class JumpControler : MonoBehaviour
     [SerializeField]
     private float gravity = -15f;
     private float verticalVelocity;
+    private bool hasGravity = true;
+    public bool HasGravity
+    {
+        set
+        {
+            hasGravity = value;
+            if (!hasGravity)
+            {
+                verticalVelocity = 0f;
+            }
+        }
+    }
     public float VerticalVelocity => verticalVelocity;
     private void Update() 
     {
@@ -30,7 +43,10 @@ public class JumpControler : MonoBehaviour
         }
         else
         {
-            verticalVelocity += gravity * Time.deltaTime;
+            if (hasGravity)
+            {
+                verticalVelocity+= gravity * Time.deltaTime;
+            }
         }
     }
     public void Jump()
