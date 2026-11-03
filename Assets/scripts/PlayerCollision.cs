@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 public class PlayerCollision : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent<int> onCoinsCollected;
+    [SerializeField]
+    private UnityEvent onMaskCollected;
     [SerializeField]
     private UnityEvent<Transform> onEnemyHit;
     [SerializeField]
@@ -16,7 +19,7 @@ public class PlayerCollision : MonoBehaviour
     private RollControler rollController;
     private Invincibility invincibility;
     private JumpControler jumpControler;
-    private void Awake() 
+    private void Awake()
     {
         invincibility = GetComponent<Invincibility>();
         jumpControler = GetComponent<JumpControler>();
@@ -70,6 +73,14 @@ public class PlayerCollision : MonoBehaviour
         {
             jumpControler.HasGravity = false;
             onFall?.Invoke();
+        }  
+        else if (other.CompareTag("Mask"))
+        {
+        if (other.TryGetComponent(out Item item))
+        {
+            onMaskCollected?.Invoke();
+            item.Collect();
+        }
         }
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
