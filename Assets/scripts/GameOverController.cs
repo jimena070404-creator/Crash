@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,6 +8,10 @@ public class GameOverController : MonoBehaviour
     private Continues continues;
     [SerializeField]
     private UnityEvent onGameOver;
+    [SerializeField]
+    private UnityEvent onWinGame;
+    [SerializeField]
+    private float winDelay;
     [SerializeField]
     private UnityEvent onContinueGame;
     [SerializeField]
@@ -26,5 +31,13 @@ public class GameOverController : MonoBehaviour
         {
             onGameOver?.Invoke();
         }
+    }
+    public void WinGame()
+    {
+        Invoke(nameof(InvokeWinGame), winDelay);
+    }
+    private void InvokeWinGame()
+    {
+        onWinGame?.Invoke();
     }
 }

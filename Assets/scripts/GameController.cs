@@ -9,6 +9,12 @@ public class GameController : MonoBehaviour
     private UnityEvent onGameStart;
     [SerializeField]
     private UnityEvent onGameRestart;
+    [SerializeField]
+    private UnityEvent onWinGame;
+    public void WinGame()
+    {
+        onWinGame?.Invoke();
+    }
     private void Start()
     {
         StartGame();
