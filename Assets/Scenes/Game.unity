@@ -2430,11 +2430,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyShooter
   characterAnimator: {fileID: 1892226068}
-  hitParticles: {fileID: 0}
+  hitParticles: {fileID: 8777772410624703097, guid: 50e94e38f09f57147ba352e38eae057a, type: 3}
   bulletPrefab: {fileID: 9181971512610240282, guid: 9dd4a57e52bdcfb4a9b999b63d6fb5f8, type: 3}
   bulletPivot: {fileID: 1700051761}
   fireRate: 2
   shootTime: 1
+  shootOffset: {x: 0, y: 1, z: 0}
 --- !u!54 &511593932
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2665,6 +2666,7 @@ GameObject:
   - component: {fileID: 562219657}
   - component: {fileID: 562219659}
   - component: {fileID: 562219658}
+  - component: {fileID: 562219660}
   m_Layer: 0
   m_Name: TargetDetector
   m_TagString: Untagged
@@ -2749,8 +2751,35 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.89
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &562219660
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562219656}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &565377048
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,6 +4173,56 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1221890053}
   m_SourcePrefab: {fileID: 100100000, guid: 4caec93c49ab5b34593a7cdc71d23e05, type: 3}
+--- !u!1 &1000567136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000567138}
+  - component: {fileID: 1000567137}
+  m_Layer: 0
+  m_Name: InputDetection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1000567137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000567136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16c856d677c41641a57f3ce131a6154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputDetection
+  onGamepadConnected:
+    m_PersistentCalls:
+      m_Calls: []
+  onGamepadDisconnected:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1000567138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000567136}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.44837, y: 3.32523, z: 0.76532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1006749687
 GameObject:
   m_ObjectHideFlags: 0
@@ -8209,3 +8288,4 @@ SceneRoots:
   - {fileID: 7681306040834377774}
   - {fileID: 2125651614}
   - {fileID: 511593934}
+  - {fileID: 1000567138}

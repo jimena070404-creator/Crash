@@ -17,6 +17,7 @@ public class CharacterAnimationController : MonoBehaviour
     public void Die()
     {
         isActive=false;
+        isRolling=false;
         PlayAnimation(animationConfiguration.dieAnimationName);
     }
     public void Dance()
@@ -40,6 +41,14 @@ public class CharacterAnimationController : MonoBehaviour
             if (IsAnimationFinished(animationConfiguration.rollAnimationName))
             {
                 isRolling = false;
+                if (isGrounded)
+                {
+                    UpdateGroundedAnimation();
+                }
+                else
+                {
+                    UpdateGroundedAnimation();
+                }
             }
         }
         else if (!wasGrounded && isGrounded)
@@ -67,7 +76,7 @@ public class CharacterAnimationController : MonoBehaviour
     private void UpdateGroundedAnimation()
     {
         Vector3 horizontalVelocity = new Vector3(characterController.velocity.x, 0f, characterController.velocity.z);
-        if (horizontalVelocity.sqrMagnitude > 0f)
+        if (horizontalVelocity.sqrMagnitude > 0.01f)
         {
             PlayAnimation(animationConfiguration.runAnimationName);
         }
@@ -97,6 +106,7 @@ public class CharacterAnimationController : MonoBehaviour
     }
     private bool IsAnimationFinished(string animationName)
     {
+        if (animator.IsInTransition(0)) return false;
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         return stateInfo.IsName(animationName) && stateInfo.normalizedTime >= 1f;
     }

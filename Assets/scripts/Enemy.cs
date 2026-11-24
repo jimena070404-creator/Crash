@@ -7,23 +7,20 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject hitParticles;
     public GameObject HitParticles => hitParticles;
- 
     private Collider enemyCollider;
     protected bool isAlive = true;
- 
     private void Awake()
     {
         enemyCollider = GetComponent<Collider>();
     }
- 
     protected virtual void OnEnable()
     {
         isAlive = true;
         enemyCollider.enabled = true;
     }
- 
-    public void Die()
+    public virtual void Die()
     {
+        StopAllCoroutines();
         isAlive = false;
         enemyCollider.enabled = false;
     }
