@@ -31,7 +31,7 @@ public class MapPlayerController : MonoBehaviour
     {
         levelToMove = newLevel;
         canWalk = false;
-        characterAnimator.Play("Run");
+        characterAnimator.Play("run");
     }
     private void Update()
     {

@@ -17,12 +17,5 @@ public class MapLevelData
 {
     public bool enabled;
     public MapLevel level;
-    public MapDirection direction;
-}
-public enum MapDirection
-{
-    Up,
-    Down,
-    Left,
-    Right
+    public MoveDirection direction;
 }

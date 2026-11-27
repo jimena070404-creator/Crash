@@ -1,11 +1,8 @@
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class JumpControler : MonoBehaviour
 {
-    [SerializeField]
-    private InputController inputController;
     [SerializeField]
     private CharacterController characterController;
     [SerializeField]
@@ -28,7 +25,7 @@ public class JumpControler : MonoBehaviour
         }
     }
     public float VerticalVelocity => verticalVelocity;
-    private void Update() 
+    private void Update()
     {
         if (characterController.isGrounded)
         {
@@ -36,17 +33,20 @@ public class JumpControler : MonoBehaviour
             {
                 verticalVelocity = -2f;
             }
-            if (inputController.Jump)
-            {
-                Jump();
-            }
         }
         else
         {
             if (hasGravity)
             {
-                verticalVelocity+= gravity * Time.deltaTime;
+                verticalVelocity += gravity * Time.deltaTime;
             }
+        }
+    }
+    public void TryJump()
+    {
+        if (characterController.isGrounded)
+        {
+            Jump();
         }
     }
     public void Jump()
